@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: todo-frontend:2
+        image: todo-frontend:4
+        env:
+            - name: VITE_BACKEND_URL
+              value: "http://todo-backend:8080"
         ports:
         - containerPort: 5173
 ---
@@ -28,4 +31,5 @@ spec:
     app: todo-frontend
   ports:
   - port: 5173
+    targetPort: 5173
     nodePort: 30007

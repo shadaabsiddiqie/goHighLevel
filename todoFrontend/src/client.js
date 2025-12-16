@@ -3,7 +3,7 @@ import { createConnectTransport } from "@connectrpc/connect-web";
 import { TodoService } from "./gen/proto/todo_connect.js";
 
 const transport = createConnectTransport({
-  baseUrl: "http://localhost:8080",
+  baseUrl: import.meta.env.VITE_BACKEND_URL || "http://localhost:8080",
 });
 
 export const todoClient = createPromiseClient(TodoService, transport);
