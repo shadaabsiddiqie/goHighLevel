@@ -23,11 +23,16 @@ func withCORS(h http.Handler) http.Handler {
 }
 
 func main() {
-	handler := NewTodoHandler()
+	todoHandler := NewTodoHandler()
+	urlHandler := NewUrlHandler()
 
 	mux := http.NewServeMux()
-	path, h := todov1connect.NewTodoServiceHandler(handler)
+
+	path, h := todov1connect.NewTodoServiceHandler(todoHandler)
 	mux.Handle(path, h)
+
+	urlPath, urlH := todov1connect.NewURLShorternerServiceHandler(urlHandler)
+	mux.Handle(urlPath, urlH)
 
 	log.Println("Backend running on :8080")
 	log.Fatal(http.ListenAndServe(":8080", withCORS(mux)))

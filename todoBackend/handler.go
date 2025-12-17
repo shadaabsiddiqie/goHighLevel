@@ -11,12 +11,14 @@ import (
 
 type UrlHandler struct {
 	sortToOriginal map[string]string
-	cunter         int
+	// cunter int
 	// urls *todov1.ShortenURLRequest
 }
 
 func NewUrlHandler() *UrlHandler {
-	return &UrlHandler{}
+	return &UrlHandler{
+		sortToOriginal: make(map[string]string),
+	}
 }
 
 func (h *UrlHandler) ShortenURL(
@@ -29,12 +31,11 @@ func (h *UrlHandler) ShortenURL(
 
 	// url1 _ rand2
 
-	// MySQL (rand set) (100000) (101-200 given)
-	// Redis (rand set) (1-100) all were not used
+	// MySQL (rand set) (100000) (101-100 given)
 	// Redis (rand set) (1-100) all were not used
 
-	h.sortToOriginal[req.Msg.OriginalUrl] = "short.ly/" + h.cunter
-	h.cunter++
+	h.sortToOriginal[req.Msg.OriginalUrl] = "short.ly/" + req.Msg.OriginalUrl
+	// h.cunter++
 	return connect.NewResponse(&todov1.ShortenURLResponse{
 		ShortenedUrl: "short.ly/" + req.Msg.OriginalUrl,
 	}), nil

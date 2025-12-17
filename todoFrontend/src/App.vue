@@ -5,7 +5,7 @@ import { urlClient } from "./client.js";
 
 const shorten_url = ref("");
 async function shortenURL(url) {
-  const res = await urlClient.shortenURL({ url });
+  const res = await urlClient.shortenURL({ originalUrl: url });
   shorten_url.value = res.shortenedUrl;
   return res.shortenedUrl;
 }
