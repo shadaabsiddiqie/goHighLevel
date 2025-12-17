@@ -4,6 +4,27 @@ package todo.v1;
 
 option go_package = "todoBackend/gen/todo/v1;todo_v1";
 
+service URLShorternerService {
+  rpc ShortenURL(ShortenURLRequest) returns (ShortenURLResponse);
+  rpc ExpandURL(ExpandURLRequest) returns (ExpandURLResponse);
+}
+
+message ShortenURLRequest {
+  string original_url = 1;
+}
+
+message ShortenURLResponse {
+  string shortened_url = 1;
+}
+
+message ExpandURLRequest {
+  string shortened_url = 1;
+}
+
+message ExpandURLResponse {
+  string original_url = 1;
+}
+
 service TodoService {
   rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse);
   rpc ListTodos(ListTodosRequest) returns (ListTodosResponse);
@@ -13,6 +34,7 @@ message Todo {
   int32 id = 1;
   string title = 2;
 }
+// [31-0 1 (title)] 
 
 message CreateTodoRequest {
   string title = 1;
@@ -27,3 +49,5 @@ message ListTodosRequest {}
 message ListTodosResponse {
   repeated Todo todos = 1;
 }
+
+// 

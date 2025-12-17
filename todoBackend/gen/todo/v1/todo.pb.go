@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v6.33.2
-// source: todoBackend/proto/todo.proto
+// source: proto/todo.proto
 
 package todo_v1
 
@@ -21,6 +21,182 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ShortenURLRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OriginalUrl   string                 `protobuf:"bytes,1,opt,name=original_url,json=originalUrl,proto3" json:"original_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShortenURLRequest) Reset() {
+	*x = ShortenURLRequest{}
+	mi := &file_proto_todo_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShortenURLRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShortenURLRequest) ProtoMessage() {}
+
+func (x *ShortenURLRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_todo_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShortenURLRequest.ProtoReflect.Descriptor instead.
+func (*ShortenURLRequest) Descriptor() ([]byte, []int) {
+	return file_proto_todo_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *ShortenURLRequest) GetOriginalUrl() string {
+	if x != nil {
+		return x.OriginalUrl
+	}
+	return ""
+}
+
+type ShortenURLResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ShortenedUrl  string                 `protobuf:"bytes,1,opt,name=shortened_url,json=shortenedUrl,proto3" json:"shortened_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShortenURLResponse) Reset() {
+	*x = ShortenURLResponse{}
+	mi := &file_proto_todo_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShortenURLResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShortenURLResponse) ProtoMessage() {}
+
+func (x *ShortenURLResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_todo_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShortenURLResponse.ProtoReflect.Descriptor instead.
+func (*ShortenURLResponse) Descriptor() ([]byte, []int) {
+	return file_proto_todo_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ShortenURLResponse) GetShortenedUrl() string {
+	if x != nil {
+		return x.ShortenedUrl
+	}
+	return ""
+}
+
+type ExpandURLRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ShortenedUrl  string                 `protobuf:"bytes,1,opt,name=shortened_url,json=shortenedUrl,proto3" json:"shortened_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExpandURLRequest) Reset() {
+	*x = ExpandURLRequest{}
+	mi := &file_proto_todo_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExpandURLRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExpandURLRequest) ProtoMessage() {}
+
+func (x *ExpandURLRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_todo_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExpandURLRequest.ProtoReflect.Descriptor instead.
+func (*ExpandURLRequest) Descriptor() ([]byte, []int) {
+	return file_proto_todo_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ExpandURLRequest) GetShortenedUrl() string {
+	if x != nil {
+		return x.ShortenedUrl
+	}
+	return ""
+}
+
+type ExpandURLResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OriginalUrl   string                 `protobuf:"bytes,1,opt,name=original_url,json=originalUrl,proto3" json:"original_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExpandURLResponse) Reset() {
+	*x = ExpandURLResponse{}
+	mi := &file_proto_todo_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExpandURLResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExpandURLResponse) ProtoMessage() {}
+
+func (x *ExpandURLResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_todo_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExpandURLResponse.ProtoReflect.Descriptor instead.
+func (*ExpandURLResponse) Descriptor() ([]byte, []int) {
+	return file_proto_todo_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ExpandURLResponse) GetOriginalUrl() string {
+	if x != nil {
+		return x.OriginalUrl
+	}
+	return ""
+}
+
 type Todo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -31,7 +207,7 @@ type Todo struct {
 
 func (x *Todo) Reset() {
 	*x = Todo{}
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[0]
+	mi := &file_proto_todo_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +219,7 @@ func (x *Todo) String() string {
 func (*Todo) ProtoMessage() {}
 
 func (x *Todo) ProtoReflect() protoreflect.Message {
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[0]
+	mi := &file_proto_todo_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +232,7 @@ func (x *Todo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Todo.ProtoReflect.Descriptor instead.
 func (*Todo) Descriptor() ([]byte, []int) {
-	return file_todoBackend_proto_todo_proto_rawDescGZIP(), []int{0}
+	return file_proto_todo_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Todo) GetId() int32 {
@@ -82,7 +258,7 @@ type CreateTodoRequest struct {
 
 func (x *CreateTodoRequest) Reset() {
 	*x = CreateTodoRequest{}
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[1]
+	mi := &file_proto_todo_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -94,7 +270,7 @@ func (x *CreateTodoRequest) String() string {
 func (*CreateTodoRequest) ProtoMessage() {}
 
 func (x *CreateTodoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[1]
+	mi := &file_proto_todo_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,7 +283,7 @@ func (x *CreateTodoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTodoRequest.ProtoReflect.Descriptor instead.
 func (*CreateTodoRequest) Descriptor() ([]byte, []int) {
-	return file_todoBackend_proto_todo_proto_rawDescGZIP(), []int{1}
+	return file_proto_todo_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CreateTodoRequest) GetTitle() string {
@@ -126,7 +302,7 @@ type CreateTodoResponse struct {
 
 func (x *CreateTodoResponse) Reset() {
 	*x = CreateTodoResponse{}
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[2]
+	mi := &file_proto_todo_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -138,7 +314,7 @@ func (x *CreateTodoResponse) String() string {
 func (*CreateTodoResponse) ProtoMessage() {}
 
 func (x *CreateTodoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[2]
+	mi := &file_proto_todo_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -151,7 +327,7 @@ func (x *CreateTodoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTodoResponse.ProtoReflect.Descriptor instead.
 func (*CreateTodoResponse) Descriptor() ([]byte, []int) {
-	return file_todoBackend_proto_todo_proto_rawDescGZIP(), []int{2}
+	return file_proto_todo_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CreateTodoResponse) GetTodo() *Todo {
@@ -169,7 +345,7 @@ type ListTodosRequest struct {
 
 func (x *ListTodosRequest) Reset() {
 	*x = ListTodosRequest{}
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[3]
+	mi := &file_proto_todo_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -181,7 +357,7 @@ func (x *ListTodosRequest) String() string {
 func (*ListTodosRequest) ProtoMessage() {}
 
 func (x *ListTodosRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[3]
+	mi := &file_proto_todo_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -194,7 +370,7 @@ func (x *ListTodosRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTodosRequest.ProtoReflect.Descriptor instead.
 func (*ListTodosRequest) Descriptor() ([]byte, []int) {
-	return file_todoBackend_proto_todo_proto_rawDescGZIP(), []int{3}
+	return file_proto_todo_proto_rawDescGZIP(), []int{7}
 }
 
 type ListTodosResponse struct {
@@ -206,7 +382,7 @@ type ListTodosResponse struct {
 
 func (x *ListTodosResponse) Reset() {
 	*x = ListTodosResponse{}
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[4]
+	mi := &file_proto_todo_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -218,7 +394,7 @@ func (x *ListTodosResponse) String() string {
 func (*ListTodosResponse) ProtoMessage() {}
 
 func (x *ListTodosResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_todoBackend_proto_todo_proto_msgTypes[4]
+	mi := &file_proto_todo_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -231,7 +407,7 @@ func (x *ListTodosResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTodosResponse.ProtoReflect.Descriptor instead.
 func (*ListTodosResponse) Descriptor() ([]byte, []int) {
-	return file_todoBackend_proto_todo_proto_rawDescGZIP(), []int{4}
+	return file_proto_todo_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListTodosResponse) GetTodos() []*Todo {
@@ -241,11 +417,19 @@ func (x *ListTodosResponse) GetTodos() []*Todo {
 	return nil
 }
 
-var File_todoBackend_proto_todo_proto protoreflect.FileDescriptor
+var File_proto_todo_proto protoreflect.FileDescriptor
 
-const file_todoBackend_proto_todo_proto_rawDesc = "" +
+const file_proto_todo_proto_rawDesc = "" +
 	"\n" +
-	"\x1ctodoBackend/proto/todo.proto\x12\atodo.v1\",\n" +
+	"\x10proto/todo.proto\x12\atodo.v1\"6\n" +
+	"\x11ShortenURLRequest\x12!\n" +
+	"\foriginal_url\x18\x01 \x01(\tR\voriginalUrl\"9\n" +
+	"\x12ShortenURLResponse\x12#\n" +
+	"\rshortened_url\x18\x01 \x01(\tR\fshortenedUrl\"7\n" +
+	"\x10ExpandURLRequest\x12#\n" +
+	"\rshortened_url\x18\x01 \x01(\tR\fshortenedUrl\"6\n" +
+	"\x11ExpandURLResponse\x12!\n" +
+	"\foriginal_url\x18\x01 \x01(\tR\voriginalUrl\",\n" +
 	"\x04Todo\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\")\n" +
@@ -255,66 +439,78 @@ const file_todoBackend_proto_todo_proto_rawDesc = "" +
 	"\x04todo\x18\x01 \x01(\v2\r.todo.v1.TodoR\x04todo\"\x12\n" +
 	"\x10ListTodosRequest\"8\n" +
 	"\x11ListTodosResponse\x12#\n" +
-	"\x05todos\x18\x01 \x03(\v2\r.todo.v1.TodoR\x05todos2\x98\x01\n" +
+	"\x05todos\x18\x01 \x03(\v2\r.todo.v1.TodoR\x05todos2\xa1\x01\n" +
+	"\x14URLShorternerService\x12E\n" +
+	"\n" +
+	"ShortenURL\x12\x1a.todo.v1.ShortenURLRequest\x1a\x1b.todo.v1.ShortenURLResponse\x12B\n" +
+	"\tExpandURL\x12\x19.todo.v1.ExpandURLRequest\x1a\x1a.todo.v1.ExpandURLResponse2\x98\x01\n" +
 	"\vTodoService\x12E\n" +
 	"\n" +
 	"CreateTodo\x12\x1a.todo.v1.CreateTodoRequest\x1a\x1b.todo.v1.CreateTodoResponse\x12B\n" +
 	"\tListTodos\x12\x19.todo.v1.ListTodosRequest\x1a\x1a.todo.v1.ListTodosResponseB!Z\x1ftodoBackend/gen/todo/v1;todo_v1b\x06proto3"
 
 var (
-	file_todoBackend_proto_todo_proto_rawDescOnce sync.Once
-	file_todoBackend_proto_todo_proto_rawDescData []byte
+	file_proto_todo_proto_rawDescOnce sync.Once
+	file_proto_todo_proto_rawDescData []byte
 )
 
-func file_todoBackend_proto_todo_proto_rawDescGZIP() []byte {
-	file_todoBackend_proto_todo_proto_rawDescOnce.Do(func() {
-		file_todoBackend_proto_todo_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_todoBackend_proto_todo_proto_rawDesc), len(file_todoBackend_proto_todo_proto_rawDesc)))
+func file_proto_todo_proto_rawDescGZIP() []byte {
+	file_proto_todo_proto_rawDescOnce.Do(func() {
+		file_proto_todo_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_todo_proto_rawDesc), len(file_proto_todo_proto_rawDesc)))
 	})
-	return file_todoBackend_proto_todo_proto_rawDescData
+	return file_proto_todo_proto_rawDescData
 }
 
-var file_todoBackend_proto_todo_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_todoBackend_proto_todo_proto_goTypes = []any{
-	(*Todo)(nil),               // 0: todo.v1.Todo
-	(*CreateTodoRequest)(nil),  // 1: todo.v1.CreateTodoRequest
-	(*CreateTodoResponse)(nil), // 2: todo.v1.CreateTodoResponse
-	(*ListTodosRequest)(nil),   // 3: todo.v1.ListTodosRequest
-	(*ListTodosResponse)(nil),  // 4: todo.v1.ListTodosResponse
+var file_proto_todo_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_proto_todo_proto_goTypes = []any{
+	(*ShortenURLRequest)(nil),  // 0: todo.v1.ShortenURLRequest
+	(*ShortenURLResponse)(nil), // 1: todo.v1.ShortenURLResponse
+	(*ExpandURLRequest)(nil),   // 2: todo.v1.ExpandURLRequest
+	(*ExpandURLResponse)(nil),  // 3: todo.v1.ExpandURLResponse
+	(*Todo)(nil),               // 4: todo.v1.Todo
+	(*CreateTodoRequest)(nil),  // 5: todo.v1.CreateTodoRequest
+	(*CreateTodoResponse)(nil), // 6: todo.v1.CreateTodoResponse
+	(*ListTodosRequest)(nil),   // 7: todo.v1.ListTodosRequest
+	(*ListTodosResponse)(nil),  // 8: todo.v1.ListTodosResponse
 }
-var file_todoBackend_proto_todo_proto_depIdxs = []int32{
-	0, // 0: todo.v1.CreateTodoResponse.todo:type_name -> todo.v1.Todo
-	0, // 1: todo.v1.ListTodosResponse.todos:type_name -> todo.v1.Todo
-	1, // 2: todo.v1.TodoService.CreateTodo:input_type -> todo.v1.CreateTodoRequest
-	3, // 3: todo.v1.TodoService.ListTodos:input_type -> todo.v1.ListTodosRequest
-	2, // 4: todo.v1.TodoService.CreateTodo:output_type -> todo.v1.CreateTodoResponse
-	4, // 5: todo.v1.TodoService.ListTodos:output_type -> todo.v1.ListTodosResponse
-	4, // [4:6] is the sub-list for method output_type
-	2, // [2:4] is the sub-list for method input_type
+var file_proto_todo_proto_depIdxs = []int32{
+	4, // 0: todo.v1.CreateTodoResponse.todo:type_name -> todo.v1.Todo
+	4, // 1: todo.v1.ListTodosResponse.todos:type_name -> todo.v1.Todo
+	0, // 2: todo.v1.URLShorternerService.ShortenURL:input_type -> todo.v1.ShortenURLRequest
+	2, // 3: todo.v1.URLShorternerService.ExpandURL:input_type -> todo.v1.ExpandURLRequest
+	5, // 4: todo.v1.TodoService.CreateTodo:input_type -> todo.v1.CreateTodoRequest
+	7, // 5: todo.v1.TodoService.ListTodos:input_type -> todo.v1.ListTodosRequest
+	1, // 6: todo.v1.URLShorternerService.ShortenURL:output_type -> todo.v1.ShortenURLResponse
+	3, // 7: todo.v1.URLShorternerService.ExpandURL:output_type -> todo.v1.ExpandURLResponse
+	6, // 8: todo.v1.TodoService.CreateTodo:output_type -> todo.v1.CreateTodoResponse
+	8, // 9: todo.v1.TodoService.ListTodos:output_type -> todo.v1.ListTodosResponse
+	6, // [6:10] is the sub-list for method output_type
+	2, // [2:6] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
 	2, // [2:2] is the sub-list for extension extendee
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_todoBackend_proto_todo_proto_init() }
-func file_todoBackend_proto_todo_proto_init() {
-	if File_todoBackend_proto_todo_proto != nil {
+func init() { file_proto_todo_proto_init() }
+func file_proto_todo_proto_init() {
+	if File_proto_todo_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_todoBackend_proto_todo_proto_rawDesc), len(file_todoBackend_proto_todo_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_todo_proto_rawDesc), len(file_proto_todo_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   9,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   2,
 		},
-		GoTypes:           file_todoBackend_proto_todo_proto_goTypes,
-		DependencyIndexes: file_todoBackend_proto_todo_proto_depIdxs,
-		MessageInfos:      file_todoBackend_proto_todo_proto_msgTypes,
+		GoTypes:           file_proto_todo_proto_goTypes,
+		DependencyIndexes: file_proto_todo_proto_depIdxs,
+		MessageInfos:      file_proto_todo_proto_msgTypes,
 	}.Build()
-	File_todoBackend_proto_todo_proto = out.File
-	file_todoBackend_proto_todo_proto_goTypes = nil
-	file_todoBackend_proto_todo_proto_depIdxs = nil
+	File_proto_todo_proto = out.File
+	file_proto_todo_proto_goTypes = nil
+	file_proto_todo_proto_depIdxs = nil
 }

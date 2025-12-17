@@ -3,8 +3,35 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateTodoRequest, CreateTodoResponse, ListTodosRequest, ListTodosResponse } from "./todo_pb.js";
+import { CreateTodoRequest, CreateTodoResponse, ExpandURLRequest, ExpandURLResponse, ListTodosRequest, ListTodosResponse, ShortenURLRequest, ShortenURLResponse } from "./todo_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+
+/**
+ * @generated from service todo.v1.URLShorternerService
+ */
+export declare const URLShorternerService: {
+  readonly typeName: "todo.v1.URLShorternerService",
+  readonly methods: {
+    /**
+     * @generated from rpc todo.v1.URLShorternerService.ShortenURL
+     */
+    readonly shortenURL: {
+      readonly name: "ShortenURL",
+      readonly I: typeof ShortenURLRequest,
+      readonly O: typeof ShortenURLResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc todo.v1.URLShorternerService.ExpandURL
+     */
+    readonly expandURL: {
+      readonly name: "ExpandURL",
+      readonly I: typeof ExpandURLRequest,
+      readonly O: typeof ExpandURLResponse,
+      readonly kind: MethodKind.Unary,
+    },
+  }
+};
 
 /**
  * @generated from service todo.v1.TodoService

@@ -7,6 +7,102 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from message todo.v1.ShortenURLRequest
+ */
+export declare class ShortenURLRequest extends Message<ShortenURLRequest> {
+  /**
+   * @generated from field: string original_url = 1;
+   */
+  originalUrl: string;
+
+  constructor(data?: PartialMessage<ShortenURLRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "todo.v1.ShortenURLRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShortenURLRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShortenURLRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShortenURLRequest;
+
+  static equals(a: ShortenURLRequest | PlainMessage<ShortenURLRequest> | undefined, b: ShortenURLRequest | PlainMessage<ShortenURLRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message todo.v1.ShortenURLResponse
+ */
+export declare class ShortenURLResponse extends Message<ShortenURLResponse> {
+  /**
+   * @generated from field: string shortened_url = 1;
+   */
+  shortenedUrl: string;
+
+  constructor(data?: PartialMessage<ShortenURLResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "todo.v1.ShortenURLResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShortenURLResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShortenURLResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShortenURLResponse;
+
+  static equals(a: ShortenURLResponse | PlainMessage<ShortenURLResponse> | undefined, b: ShortenURLResponse | PlainMessage<ShortenURLResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message todo.v1.ExpandURLRequest
+ */
+export declare class ExpandURLRequest extends Message<ExpandURLRequest> {
+  /**
+   * @generated from field: string shortened_url = 1;
+   */
+  shortenedUrl: string;
+
+  constructor(data?: PartialMessage<ExpandURLRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "todo.v1.ExpandURLRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExpandURLRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExpandURLRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExpandURLRequest;
+
+  static equals(a: ExpandURLRequest | PlainMessage<ExpandURLRequest> | undefined, b: ExpandURLRequest | PlainMessage<ExpandURLRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message todo.v1.ExpandURLResponse
+ */
+export declare class ExpandURLResponse extends Message<ExpandURLResponse> {
+  /**
+   * @generated from field: string original_url = 1;
+   */
+  originalUrl: string;
+
+  constructor(data?: PartialMessage<ExpandURLResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "todo.v1.ExpandURLResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExpandURLResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExpandURLResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExpandURLResponse;
+
+  static equals(a: ExpandURLResponse | PlainMessage<ExpandURLResponse> | undefined, b: ExpandURLResponse | PlainMessage<ExpandURLResponse> | undefined): boolean;
+}
+
+/**
  * @generated from message todo.v1.Todo
  */
 export declare class Todo extends Message<Todo> {

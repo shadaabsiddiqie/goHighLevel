@@ -1,0 +1,90 @@
+# - generate short url
+
+
+# - 
+
+# -------
+# Service
+
+# createShortURL()
+# getOriginalURL()
+
+# LLD
+# ----
+# Data Model
+- URLShortner
+* url : URL
+* map[url] : shortURL
+- createShortURL()
+- getOriginalURL()
+
+
+# -----------
+- ShortURL table
+# --------
+# MySQL
+# - 
+# w: 10K 
+# ----
+# R : 100k
+# -----------------------
+# 16gb - 4 * 10 * 400 * 1000 
+# ---------
+# key : value
+# ----- 
+# -----------
+
+# CQRS
+  # - 
+
+# MySQL 
+  # - Right
+
+# Inmemory DB (Redis)
+#   - Update on wright
+#   lfu  (10M urls)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+# - URL
+# - Domine
+
+# # Methods
+# - createShortURL()
+# - getOriginalURL()
+
+# -----------
+
+# getOriginalURL(sortURL) -> originalURL
+
+
+
+
+
+
+
+
+
+
+
+google.com/abcd ->
+google.com/xyz -> 
+
+ 
+

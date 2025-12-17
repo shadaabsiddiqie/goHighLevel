@@ -1,6 +1,18 @@
 <script setup>
 import { ref } from "vue";
 import { todoClient } from "./client.js";
+import { urlClient } from "./client.js";
+
+const shorten_url = ref("");
+async function shortenURL(url) {
+  const res = await urlClient.shortenURL({ url });
+  shorten_url.value = res.shortenedUrl;
+  return res.shortenedUrl;
+}
+
+const longUrl = ref("");
+
+
 
 const title = ref("");
 const todos = ref([]);
@@ -34,4 +46,11 @@ loadTodos();
       </li>
     </ul>
   </div>
+  <div>
+    <h2>URL Shortener</h2>
+    <input v-model="longUrl" placeholder="Enter URL to shorten" />
+    <button @click="shortenURL(longUrl)">Shorten URL</button>
+    <p>Shortened URL: {{ shorten_url }}</p>
+  </div>
+
 </template>

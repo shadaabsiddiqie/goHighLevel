@@ -6,6 +6,46 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from message todo.v1.ShortenURLRequest
+ */
+export const ShortenURLRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "todo.v1.ShortenURLRequest",
+  () => [
+    { no: 1, name: "original_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message todo.v1.ShortenURLResponse
+ */
+export const ShortenURLResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "todo.v1.ShortenURLResponse",
+  () => [
+    { no: 1, name: "shortened_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message todo.v1.ExpandURLRequest
+ */
+export const ExpandURLRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "todo.v1.ExpandURLRequest",
+  () => [
+    { no: 1, name: "shortened_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message todo.v1.ExpandURLResponse
+ */
+export const ExpandURLResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "todo.v1.ExpandURLResponse",
+  () => [
+    { no: 1, name: "original_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * @generated from message todo.v1.Todo
  */
 export const Todo = /*@__PURE__*/ proto3.makeMessageType(
